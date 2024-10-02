@@ -1,0 +1,5 @@
+Structured output from scratch
+
+This project is a simple implementation of structured outputs for an LLM in pure python. It takes in a grammar, and forces LLM output to follow that grammar. It does this by computing the follow sets for each token in the LLM vocab from the grammar, then given the last token it normalizes the prediction logits over just the follow set. 
+
+The llm.py file is from [llama2.py](https://github.com/tairov/llama2.py/blob/master/llama2.py) and edited to do the grammar stuff. I wrote the grammar processing file. You need a stories{##}m.bin model file and a tokenizer.bin file to run this, there's instructions in the llama2.py git repo. You also need to define your grammar in a file that is passed as the last arg to the llm.py script, see the grammar.py test function for an example grammar definition. 
